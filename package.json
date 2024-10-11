@@ -1,9 +1,9 @@
 {
-  "name": "plamo-template",
-  "displayName": "Plasmo Template",
+  "name": "kuajing-nav",
+  "displayName": "跨境小灵通-跨境卖家工具箱",
   "version": "1.0.0",
-  "description": "Plasmo template using tailwindcss and shadcn/ui",
-  "author": "coreychiu",
+  "description": "助力你的跨境电商之路",
+  "author": "langtang",
   "scripts": {
     "dev": "plasmo dev",
     "build": "plasmo build",
