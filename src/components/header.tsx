@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react"
 
+const logo = chrome.runtime.getURL("assets/images/icons/linus-tech-tips.png")
+
 interface Region {
     name: string
     flag: string
@@ -40,7 +42,11 @@ const Header = () => {
     return (
         <header className="bg-white shadow">
             <div className="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-                <h1 className="text-xl font-semibold text-gray-900">{STRINGS.pageTitle}</h1>
+                <div className="flex items-center">
+                    <img src={logo} alt="" className="w-8 h-8 rounded-full mr-3" />
+                    <h1 className="text-xl font-semibold text-gray-900">{STRINGS.pageTitle}</h1>
+                </div>
+
                 <div className="flex space-x-4">
                     {regions.map(({ name, flag, timezone }) => (
                         <div key={name} className="world-time">

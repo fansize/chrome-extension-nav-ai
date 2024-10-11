@@ -20,7 +20,7 @@ const popularChannels: PopularChannel[] = [
 const Hero = () => {
     return (
         <div className="max-w-4xl mx-auto px-4 py-12">
-            <h1 className="text-6xl font-bold mb-8 text-center">Search any YouTube Channel</h1>
+            <h1 className="text-4xl font-bold mb-8 text-center">Search any YouTube Channel</h1>
             <div className="relative mb-12">
                 <input
                     type="text"

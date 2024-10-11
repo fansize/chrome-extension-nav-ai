@@ -2,6 +2,7 @@ import "../main.css"
 import { createRoot } from "react-dom/client"
 import Header from "../components/header"
 import Hero from "../components/hero"
+import EventBanner from "../components/event-banner"
 
 const NewTab = () => {
     return (
@@ -9,6 +10,7 @@ const NewTab = () => {
             <Header />
             <main>
                 <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+                    <EventBanner />
                     <Hero />
                 </div>
             </main>
