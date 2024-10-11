@@ -1,12 +1,15 @@
-import { useEffect } from "react"
+import ToolGrid from "./components/tool-grid"
 
 const Popup = () => {
-  useEffect(() => {
-    chrome.tabs.create({ url: "newtab.html" })
-    window.close()
-  }, [])
-
-  return null
+  return (
+    <div
+      style={{
+        width: 400,
+        padding: 6,
+      }}>
+      <ToolGrid />
+    </div>
+  )
 }
 
 export default Popup

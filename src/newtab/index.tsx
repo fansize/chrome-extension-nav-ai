@@ -1,6 +1,6 @@
-import React from "react"
 import { createRoot } from "react-dom/client"
 import "../main.css"
+import Hero from "../components/hero"
 
 interface Region {
     name: string
@@ -41,10 +41,8 @@ const NewTab = () => {
             </header>
             <main>
                 <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-                    <div className="px-4 py-6 sm:px-0">
-                        <div className="border-4 border-dashed border-gray-200 rounded-lg h-96">
-                            {/* 这里添加跨境资讯、综合软件等内容 */}
-                        </div>
+                    <div>
+                        <Hero />
                     </div>
                 </div>
             </main>
