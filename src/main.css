@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 @layer base {
   :root {
@@ -90,8 +90,23 @@
 }
 
 body {
-  width: 300px;
-  padding: 20px;
+  /* 删除宽度、内边距和文本对齐的限制 */
   font-family: Arial, sans-serif;
-  text-align: center;
+}
+
+/* 新增世界时间样式 */
+.world-time {
+  @apply flex items-center space-x-2 text-xs text-gray-600;
+}
+
+.world-time-flag {
+  @apply text-base;
+}
+
+.world-time-region {
+  @apply font-semibold;
+}
+
+.world-time-datetime {
+  @apply font-normal;
 }
