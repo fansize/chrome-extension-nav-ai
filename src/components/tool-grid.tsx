@@ -18,6 +18,12 @@ const tools: Tool[] = [
     { id: "lazarbeam", name: "LazarBeam", icon: "👨", url: "https://example.com/lazarbeam" },
 ]
 
+const STRINGS = {
+    TITLE: "跨境小灵通",
+    OPEN_NEW_TAB: "查看全部",
+    TRENDING_CHANNELS: "收藏工具",
+};
+
 const ToolGrid = () => {
     const [hoveredTool, setHoveredTool] = useState<string | null>(null)
 
@@ -33,29 +39,29 @@ const ToolGrid = () => {
         <div className="p-4 max-w-md mx-auto">
             <div className="flex justify-between items-center mb-4">
                 <div className="flex items-center">
-                    <img src={logo} alt="跨境小灵通" className="w-6 h-6 rounded-full mr-3" />
-                    <span className="font-semibold text-lg">跨境小灵通</span>
+                    <img src={logo} alt={STRINGS.TITLE} className="w-6 h-6 rounded-full mr-3" />
+                    <span className="font-semibold text-lg">{STRINGS.TITLE}</span>
                 </div>
 
                 <div className="flex items-center bg-gray-100 text-gray-500 px-4 py-2 rounded-full text-sm hover:bg-gray-200 transition-colors">
                     <a href="#" onClick={handleOpenNewTab}>
-                        打开新标签页
+                        {STRINGS.OPEN_NEW_TAB}
                     </a>
                     <ChevronRight className="w-4 h-4 ml-1" />
                 </div>
             </div>
-            <h2 className="text-lg font-semibold mb-3">Trending channels</h2>
+            <h2 className="text-sm text-gray-500 font-semibold mb-3">{STRINGS.TRENDING_CHANNELS}</h2>
             <div className="grid grid-cols-2 gap-3">
                 {tools.map((tool) => (
                     <button
                         key={tool.id}
-                        className={`flex items-center p-2 rounded-lg transition-colors ${hoveredTool === tool.id ? 'bg-gray-100' : 'bg-white'
+                        className={`flex items-center p-2 rounded border border-gray-200 transition-colors ${hoveredTool === tool.id ? 'bg-gray-100' : 'bg-white'
                             }`}
                         onClick={() => handleToolClick(tool.url)}
                         onMouseEnter={() => setHoveredTool(tool.id)}
                         onMouseLeave={() => setHoveredTool(null)}
                     >
-                        <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center mr-2 overflow-hidden">
+                        <div className="w-4 h-4 rounded-full flex items-center justify-center mr-2 overflow-hidden">
                             {tool.icon.startsWith('http') ? (
                                 <img src={tool.icon} alt={tool.name} className="w-full h-full object-cover" />
                             ) : (
