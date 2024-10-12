@@ -143,14 +143,14 @@ const SearchBar = () => {
     } = useSearch()
 
     return (
-        <div className="mb-10">
-            <div className="flex mb-4 pl-4 items-center">
+        <div>
+            <div className="flex mb-4 px-2 items-center">
                 {platforms.map((platform) => (
                     <button
                         key={platform.id}
-                        className={`mr-3 px-6 py-2 rounded-full ${selectedPlatform.id === platform.id
+                        className={`mr-2 px-6 py-2 rounded-full ${selectedPlatform.id === platform.id
                             ? 'bg-red-500 text-white'
-                            : 'bg-gray-200 text-gray-500'
+                            : 'bg-gray-100 text-gray-500'
                             }`}
                         onClick={() => handlePlatformChange(platform)}
                     >
@@ -158,7 +158,7 @@ const SearchBar = () => {
                     </button>
                 ))}
                 <button
-                    className="ml-3 p-2 rounded-full bg-gray-200 hover:bg-gray-300"
+                    className=" p-2 rounded-full"
                     onClick={() => setIsAddModalOpen(true)}
                 >
                     <Plus className="w-4 h-4" />
@@ -182,6 +182,8 @@ const SearchBar = () => {
                     </svg>
                 </button>
             </div>
+
+            {/* 添加搜索的弹窗 */}
             <AddPlatformModal
                 isOpen={isAddModalOpen}
                 onClose={() => setIsAddModalOpen(false)}

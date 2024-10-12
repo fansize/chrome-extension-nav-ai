@@ -1,5 +1,6 @@
 import SearchBar from "./search-bar"
 import EventBanner from "./event-banner"
+import { Channels } from "./channels"
 const unspeakableIcon = chrome.runtime.getURL("assets/images/icons/unspeakable.png")
 const linusTechTipsIcon = chrome.runtime.getURL("assets/images/icons/linus-tech-tips.png")
 const doctorMikeIcon = chrome.runtime.getURL("assets/images/icons/doctor-mike.png")
@@ -9,33 +10,31 @@ const beastReactsIcon = chrome.runtime.getURL("assets/images/icons/beast-reacts.
 interface PopularChannel {
     name: string
     icon: string
+    description: string
+    url: string
 }
 
 const popularChannels: PopularChannel[] = [
-    { name: "Unspeakable", icon: unspeakableIcon },
-    { name: "Linus Tech Tips", icon: linusTechTipsIcon },
-    { name: "Doctor Mike", icon: doctorMikeIcon },
-    { name: "MrBeast", icon: mrBeastIcon },
-    { name: "Beast Reacts", icon: beastReactsIcon },
+    { name: "Unspeakable", icon: unspeakableIcon, description: "科技、游戏、生活", url: "https://www.youtube.com/unspeakable" },
+    { name: "Linus Tech Tips", icon: linusTechTipsIcon, description: "科技、游戏、生活", url: "https://www.youtube.com/linustechtips" },
+    { name: "Doctor Mike", icon: doctorMikeIcon, description: "科技、游戏、生活", url: "https://www.youtube.com/doctormike" },
+    { name: "MrBeast", icon: mrBeastIcon, description: "科技、游戏、生活", url: "https://www.youtube.com/mrbeast" },
+    { name: "Beast Reacts", icon: beastReactsIcon, description: "科技、游戏、生活", url: "https://www.youtube.com/beastreacts" },
 ]
 
 
 const Hero = () => {
     return (
         <div className="max-w-4xl mx-auto px-4 py-8">
-            <SearchBar />
-            <EventBanner />
-            <div>
-                <h2 className="text-xl font-semibold mb-4">Popular Channels</h2>
-                <div className="grid grid-cols-3 gap-4">
-                    {popularChannels.map((channel) => (
-                        <div key={channel.name} className="flex items-center bg-gray-100 rounded-full px-4 py-2">
-                            <img src={channel.icon} alt={channel.name} className="w-8 h-8 rounded-full mr-3" />
-                            <span className="text-sm">{channel.name}</span>
-                        </div>
-                    ))}
-                </div>
+            <div className="mb-12">
+                <SearchBar />
+                <EventBanner />
             </div>
+            <div className="flex flex-col gap-8">
+                <Channels channels={popularChannels} />
+                <Channels channels={popularChannels} />
+            </div>
+
         </div>
     )
 }

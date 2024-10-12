@@ -34,7 +34,7 @@ const EventBanner = () => {
     }
 
     return (
-        <div className="flex justify-between text-sm text-gray-600px-4 py-2 rounded-full">
+        <div className="flex justify-between text-sm text-gray-600px-4 p-4 rounded-full">
             <span>{currentDate.getFullYear()}年第 {getCurrentWeek()} 周</span>
             <div className="flex items-center">
                 {events.map((event, index) => (

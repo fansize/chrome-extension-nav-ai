@@ -20,7 +20,3 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         sendResponse({ time })
     }
 })
-
-console.log(
-    "Get time in background server"
-)
