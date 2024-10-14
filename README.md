@@ -1,5 +1,7 @@
 # 跨境电商新标签页 - Chrome插件
 
+跨境电商助手：集成多平台商品搜索、多时区时钟、运营日历和AI经营工具于一体的Chrome扩展。
+
 ![产品截图](https://github.com/fansize/chrome-extension-nav-ai/blob/main/assets/images/cover.png)
 
 ## 体验地址
@@ -15,15 +17,17 @@
 
 ## 项目开发
 
+```
 chrome-extension-nav-ai/
 ├── assets/
 ├── components/
 ├── data/
-│ └── web-data.ts
+│   └── web-data.ts
 ├── newtab/
-│ └── index.tsx
+│   └── index.tsx
 └── popup/
-└── index.tsx
+    └── index.tsx
+```
 
 自定义设置:
 
