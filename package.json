@@ -1,7 +1,7 @@
 {
   "name": "kuajing-nav",
-  "displayName": "跨境小灵通-卖家工具箱AI",
-  "version": "1.1.3",
+  "displayName": "跨境小灵通-卖家AI工具箱",
+  "version": "1.2.0",
   "description": "助力你的跨境电商之路",
   "author": "langtang",
   "scripts": {
@@ -41,9 +41,6 @@
     "typescript": "5.3.3"
   },
   "manifest": {
-    "host_permissions": [
-      "https://*/*"
-    ],
     "web_accessible_resources": [
       {
         "resources": [
