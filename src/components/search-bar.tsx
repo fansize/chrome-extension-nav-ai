@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Storage } from "@plasmohq/storage"
-import { Plus } from 'lucide-react'
+import { Plus, X } from 'lucide-react'
 
 // 定义平台接口
 interface Platform {
@@ -74,6 +74,19 @@ function useSearch() {
         setIsAddModalOpen(false)
     }
 
+    // 添加删除平台的函数
+    const handleDeletePlatform = async (platformId: string) => {
+        const updatedPlatforms = platforms.filter(p => p.id !== platformId)
+        setPlatforms(updatedPlatforms)
+        await storage.set(STORAGE_KEYS.PLATFORMS, updatedPlatforms)
+
+        // 如果删除的是当前选中的平台，则选择第一个平台
+        if (selectedPlatform.id === platformId && updatedPlatforms.length > 0) {
+            setSelectedPlatform(updatedPlatforms[0])
+            await storage.set(STORAGE_KEYS.SELECTED_PLATFORM, updatedPlatforms[0].id)
+        }
+    }
+
     return {
         platforms,
         selectedPlatform,
@@ -83,7 +96,8 @@ function useSearch() {
         handlePlatformChange,
         isAddModalOpen,
         setIsAddModalOpen,
-        handleAddPlatform
+        handleAddPlatform,
+        handleDeletePlatform
     }
 }
 
@@ -139,26 +153,40 @@ const SearchBar = () => {
         handlePlatformChange,
         isAddModalOpen,
         setIsAddModalOpen,
-        handleAddPlatform
+        handleAddPlatform,
+        handleDeletePlatform
     } = useSearch()
 
     return (
         <div>
             <div className="flex mb-4 px-2 items-center">
                 {platforms.map((platform) => (
-                    <button
+                    <div
                         key={platform.id}
-                        className={`mr-2 px-6 py-2 rounded-full  ${selectedPlatform.id === platform.id
-                            ? 'bg-red-500 text-white'
-                            : 'bg-gray-50 text-gray-500'
-                            }`}
-                        onClick={() => handlePlatformChange(platform)}
+                        className="relative group mr-2"
                     >
-                        {platform.name}
-                    </button>
+                        <button
+                            className={`px-6 py-2 rounded-full ${selectedPlatform.id === platform.id
+                                    ? 'bg-red-500 text-white'
+                                    : 'bg-gray-50 text-gray-500'
+                                }`}
+                            onClick={() => handlePlatformChange(platform)}
+                        >
+                            {platform.name}
+                        </button>
+                        <button
+                            className="absolute -top-1 -right-1 bg-red-500 text-white rounded-full p-1 hidden group-hover:block"
+                            onClick={(e) => {
+                                e.stopPropagation()
+                                handleDeletePlatform(platform.id)
+                            }}
+                        >
+                            <X className="w-3 h-3" />
+                        </button>
+                    </div>
                 ))}
                 <button
-                    className=" p-2 rounded-full"
+                    className="p-2 rounded-full"
                     onClick={() => setIsAddModalOpen(true)}
                 >
                     <Plus className="w-4 h-4" />

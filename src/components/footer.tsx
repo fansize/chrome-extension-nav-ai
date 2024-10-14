@@ -13,7 +13,7 @@ export function Footer({ showBackground, setShowBackground }: FooterProps) {
                 <Button
                     variant="ghost"
                     size="icon"
-                    onClick={() => window.open("https://your-website.com", "_blank")}
+                    onClick={() => window.open("https://langtang.vercel.app/", "_blank")}
                     aria-label="作者网站"
                 >
                     <Globe className="h-5 w-5" />
@@ -21,7 +21,7 @@ export function Footer({ showBackground, setShowBackground }: FooterProps) {
                 <Button
                     variant="ghost"
                     size="icon"
-                    onClick={() => window.open("https://github.com/your-github-repo", "_blank")}
+                    onClick={() => window.open("https://github.com/fansize/chrome-extension-nav-ai", "_blank")}
                     aria-label="GitHub 仓库"
                 >
                     <Github className="h-5 w-5" />
