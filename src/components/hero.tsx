@@ -3,10 +3,10 @@ import SearchBar from "./search-bar"
 import EventBanner from "./event-banner"
 import { Channels } from "./channels"
 import { popularChannels } from '../data/web-data'
-import type { PopularChannel } from '../data/web-data'
+import type { ChannelItem } from '../data/web-data'
 
 const Hero = () => {
-    const [channels, setChannels] = useState<PopularChannel[]>([])
+    const [channels, setChannels] = useState<ChannelItem[]>([])
 
     useEffect(() => {
         const updatedChannels = popularChannels.map(channel => ({

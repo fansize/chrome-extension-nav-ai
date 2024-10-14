@@ -19,7 +19,7 @@ const STORAGE_KEYS = {
 const initialPlatforms: Platform[] = [
     { id: 'amazon-us', name: '美亚', searchUrl: 'https://www.amazon.com/s?k=' },
     { id: 'amazon-de', name: '德亚', searchUrl: 'https://www.amazon.de/s?k=' },
-    { id: 'temu', name: 'Temu', searchUrl: 'https://www.temu.com/search.htm?search_key=' },
+    { id: 'temu', name: 'Temu', searchUrl: 'https://www.temu.com/search_result.html?search_key=' },
     { id: 'etsy', name: 'Etsy', searchUrl: 'https://www.etsy.com/search?q=' }
 ]
 

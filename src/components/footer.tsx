@@ -1,6 +1,5 @@
 import { Github, Globe } from "lucide-react"
 import { Button } from "./ui/button"
-import { Switch } from "./ui/switch"
 
 interface FooterProps {
     showBackground: boolean
@@ -14,23 +13,24 @@ export function Footer({ showBackground, setShowBackground }: FooterProps) {
                 <Button
                     variant="ghost"
                     size="icon"
-                    onClick={() => window.open("https://github.com/your-github-repo", "_blank")}
-                    aria-label="GitHub 仓库"
-                >
-                    <Github className="h-5 w-5" />
-                </Button>
-                <Button
-                    variant="ghost"
-                    size="icon"
                     onClick={() => window.open("https://your-website.com", "_blank")}
                     aria-label="作者网站"
                 >
                     <Globe className="h-5 w-5" />
                 </Button>
-                <Switch
+                <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={() => window.open("https://github.com/your-github-repo", "_blank")}
+                    aria-label="GitHub 仓库"
+                >
+                    <Github className="h-5 w-5" />
+                </Button>
+
+                {/* <Switch
                     checked={showBackground}
                     onCheckedChange={setShowBackground}
-                />
+                /> */}
             </div>
         </footer>
     )

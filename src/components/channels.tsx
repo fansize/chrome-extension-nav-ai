@@ -22,7 +22,7 @@ export function Channels({ channels }: ChannelsProps) {
                         <img src={channel.icon} alt={channel.name} className="w-10 h-10 rounded-full mr-3" />
                         <h3 className="text-lg font-semibold">{channel.name}</h3>
                     </div>
-                    <p className="text-sm text-gray-600">{channel.description}</p>
+                    <p className="text-sm text-gray-500">{channel.description}</p>
                 </div>
             ))}
         </div>

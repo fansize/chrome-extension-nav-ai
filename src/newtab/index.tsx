@@ -10,17 +10,15 @@ const NewTab = () => {
     const [showBackground, setShowBackground] = useState(false)
 
     return (
-                <Header />
-                <main>
-                    <div className="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
-                        <Hero />
-                    </div>
-                </main>
-                <Footer
-                    showBackground={showBackground}
-                    setShowBackground={setShowBackground}
-                />
-
+        <div className="bg-gray-50 min-h-screen">
+            <Header />
+            <main>
+                <Hero />
+            </main>
+            <Footer
+                showBackground={showBackground}
+                setShowBackground={setShowBackground}
+            />
         </div >
     )
 }
