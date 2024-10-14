@@ -14,7 +14,6 @@ const regions: Region[] = [
     { name: "英国", flag: "🇬🇧", timezone: "Europe/London" },
     { name: "欧洲", flag: "🇪🇺", timezone: "Europe/Paris" },
     { name: "北京", flag: "🇨🇳", timezone: "Asia/Shanghai" },
-    { name: "日本", flag: "🇯🇵", timezone: "Asia/Tokyo" }
 ]
 
 const STRINGS = {
@@ -40,11 +39,11 @@ const Header = () => {
     }, [])
 
     return (
-        <header className="bg-white shadow">
-            <div className="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+        <header className="shadow">
+            <div className="max-w-6xl mx-auto py-4 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
                 <div className="flex items-center">
-                    <img src={logo} alt="" className="w-8 h-8 rounded-full mr-3" />
-                    <h1 className="text-xl font-semibold text-gray-900">{STRINGS.pageTitle}</h1>
+                    <img src={logo} alt="" className="w-6 h-6 rounded-full mr-3" />
+                    <h1 className="text-lg font-semibold text-gray-900">{STRINGS.pageTitle}</h1>
                 </div>
 
                 <div className="flex space-x-4">

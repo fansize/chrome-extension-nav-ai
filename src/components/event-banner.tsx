@@ -7,7 +7,7 @@ interface CountdownEvent {
 }
 
 const events: CountdownEvent[] = [
-    { name: '2025年', date: new Date('2025-01-01'), color: 'text-blue-500' },
+    { name: '2025年', date: new Date('2025-01-01'), color: 'text-red-500' },
     { name: '黑五', date: new Date('2024-11-29'), color: 'text-red-500' },
     { name: '圣诞节', date: new Date('2024-12-25'), color: 'text-red-500' },
     { name: '春节', date: new Date('2025-01-29'), color: 'text-red-500' },
@@ -34,7 +34,7 @@ const EventBanner = () => {
     }
 
     return (
-        <div className="flex justify-between text-sm text-gray-600px-4 p-4 rounded-full">
+        <div className="flex justify-between text-sm text-gray-600 px-4 p-4 rounded-full">
             <span>{currentDate.getFullYear()}年第 {getCurrentWeek()} 周</span>
             <div className="flex items-center">
                 {events.map((event, index) => (

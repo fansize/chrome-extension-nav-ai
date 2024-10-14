@@ -1,27 +1,14 @@
-import { useState } from 'react'
 import "../main.css"
+import { useState } from 'react'
 import { ChevronRight } from 'lucide-react'
+import { tools } from '../data/web-data'
 
 const logo = chrome.runtime.getURL("assets/images/icons/linus-tech-tips.png")
-
-interface Tool {
-    id: string
-    name: string
-    icon: string
-    url: string
-}
-
-const tools: Tool[] = [
-    { id: "chris-bumstead", name: "Chris Bumstead", icon: "BUM.", url: "https://example.com/chris-bumstead" },
-    { id: "mrbeast", name: "MrBeast", icon: "🦁", url: "https://example.com/mrbeast" },
-    { id: "tommyinnit", name: "TommyInnit", icon: "👦", url: "https://example.com/tommyinnit" },
-    { id: "lazarbeam", name: "LazarBeam", icon: "👨", url: "https://example.com/lazarbeam" },
-]
 
 const STRINGS = {
     TITLE: "跨境小灵通",
     OPEN_NEW_TAB: "查看全部",
-    TRENDING_CHANNELS: "收藏工具",
+    TRENDING_CHANNELS: "常用工具",
 };
 
 const ToolGrid = () => {
@@ -72,7 +59,6 @@ const ToolGrid = () => {
                     </button>
                 ))}
             </div>
-
         </div>
     )
 }

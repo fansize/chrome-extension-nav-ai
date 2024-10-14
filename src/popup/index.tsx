@@ -2,8 +2,6 @@ import "../main.css"
 import ToolGrid from "../components/tool-grid"
 
 const Popup = () => {
-
-
   return (
     <div
       style={{

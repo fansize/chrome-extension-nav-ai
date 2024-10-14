@@ -7,27 +7,24 @@ interface ChannelsProps {
     }[]
 }
 
-
 export function Channels({ channels }: ChannelsProps) {
     const handleChannelClick = (url: string) => {
         window.open(url, '_blank')
     }
 
     return (
-        <div>
-            <div className="grid grid-cols-3 gap-4">
-                {channels.map((channel) => (
-                    <div key={channel.name}
-                        className="flex items-center bg-gray-100 rounded-full px-4 py-2 cursor-pointer hover:bg-gray-200 transition-colors"
-                        onClick={() => handleChannelClick(channel.url)}>
-                        <img src={channel.icon} alt={channel.name} className="w-8 h-8 rounded-full mr-3" />
-                        <div className="flex flex-col">
-                            <span className="text-sm">{channel.name}</span>
-                            <span className="text-xs text-gray-500">{channel.description}</span>
-                        </div>
+        <div className="grid grid-cols-3 gap-4">
+            {channels.map((channel) => (
+                <div key={channel.name}
+                    className="bg-white rounded-lg p-4 shadow-sm cursor-pointer hover:shadow-md transition-shadow"
+                    onClick={() => handleChannelClick(channel.url)}>
+                    <div className="flex items-center mb-3">
+                        <img src={channel.icon} alt={channel.name} className="w-10 h-10 rounded-full mr-3" />
+                        <h3 className="text-lg font-semibold">{channel.name}</h3>
                     </div>
-                ))}
-            </div>
+                    <p className="text-sm text-gray-600">{channel.description}</p>
+                </div>
+            ))}
         </div>
     )
 }

@@ -148,9 +148,9 @@ const SearchBar = () => {
                 {platforms.map((platform) => (
                     <button
                         key={platform.id}
-                        className={`mr-2 px-6 py-2 rounded-full ${selectedPlatform.id === platform.id
+                        className={`mr-2 px-6 py-2 rounded-full  ${selectedPlatform.id === platform.id
                             ? 'bg-red-500 text-white'
-                            : 'bg-gray-100 text-gray-500'
+                            : 'bg-gray-50 text-gray-500'
                             }`}
                         onClick={() => handlePlatformChange(platform)}
                     >
