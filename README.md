@@ -1,8 +1,10 @@
 # 跨境电商新标签页 - Chrome插件
 
+![产品截图](https://github.com/fansize/chrome-extension-nav-ai/blob/main/assets/images/cover.png)
+
 ## 体验地址
 
-Chrome 网上应用店: [扩展名称](https://chrome.google.com/webstore/detail/your-extension-id)
+安装: [Chrome 网上应用店](https://chrome.google.com/webstore/detail/egealhlklgiidiljapmclnccfakpmbfa)
 
 ## 功能
 
@@ -11,13 +13,31 @@ Chrome 网上应用店: [扩展名称](https://chrome.google.com/webstore/detail
 3. 运营日历：提醒黑五、圣诞等购物季的剩余天数
 4. AI经营工具（持续增加中）：写Listing、写用户回复、关键词等
 
+## 项目开发
+
+chrome-extension-nav-ai/
+├── assets/
+├── components/
+├── data/
+│ └── web-data.ts
+├── newtab/
+│ └── index.tsx
+└── popup/
+└── index.tsx
+
+自定义设置:
+
+- 导航页网址: 修改 `data/web-data.ts` 文件
+- 新标签页逻辑: 编辑 `newtab/index.tsx` 文件
+- 弹出窗口逻辑: 编辑 `popup/index.tsx` 文件
+
 技术栈：
 
 - [Plasmo](https://docs.plasmo.com/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Shadcn/ui](https://ui.shadcn.com/)
 
-## 本地开发
+启动开发环境：
 
 ```bash
 pnpm dev
@@ -25,9 +45,7 @@ pnpm dev
 npm run dev
 ```
 
-## 构建生产版本
-
-运行以下命令：
+构建生产版本：
 
 ```bash
 pnpm build
